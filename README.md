@@ -60,7 +60,7 @@ func main() {
 
 ## API Reference
 
-```New(n uint64, p float64) (*BloomFilter, error)```
+- ```New(n uint64, p float64) (*BloomFilter, error)```
 
 Creates a new Bloom filter.
 
@@ -69,7 +69,7 @@ Creates a new Bloom filter.
 
 Returns a new BloomFilter or an error if the probability is invalid.
 
-```NewWithParams(m uint64, k uint64) *BloomFilter```
+- ```NewWithParams(m uint64, k uint64) *BloomFilter```
 
 Creates a new Bloom filter with explicit parameters.
 
@@ -78,43 +78,43 @@ Creates a new Bloom filter with explicit parameters.
 
 Use this for fine-grained control; otherwise, ```New()``` is recommended.
 
-```(*BloomFilter) Add(item []byte)```
+- ```(*BloomFilter) Add(item []byte)```
 
 Adds an item to the Bloom filter.
 
-```(*BloomFilter) Test(item []byte) bool```
+- ```(*BloomFilter) Test(item []byte) bool```
 
 Checks if an item is possibly present in the Bloom filter.  Returns true if the item might be present (false positive possible), and false if it is definitely not present.
 
-```(*BloomFilter) EstimatedFillRatio() float64```
+- ```(*BloomFilter) EstimatedFillRatio() float64```
 
 Returns the estimated fill ratio of the Bloom filter.
 
-```(*BloomFilter) ActualFillRatio() float64```
+- ```(*BloomFilter) ActualFillRatio() float64```
 
 Returns the actual fill ratio (fraction of bits set) of the Bloom filter.
 
-```(*BloomFilter) FalsePositiveRate() float64```
+- ```(*BloomFilter) FalsePositiveRate() float64```
 
 Estimates the current false positive rate.
 
-```(*BloomFilter) MemoryUsage() int```
+- ```(*BloomFilter) MemoryUsage() int```
 
 Returns the memory usage of the Bloom filter in bytes.
 
-```(*BloomFilter) MarshalBinary() ([]byte, error)```
+- ```(*BloomFilter) MarshalBinary() ([]byte, error)```
 
 Serializes the Bloom filter to a binary format.  This is useful for saving the filter or sending it over a network.
 
-```UnmarshalBinary(data []byte) (*BloomFilter, error)```
+- ```UnmarshalBinary(data []byte) (*BloomFilter, error)```
 
 Deserializes a Bloom filter from its binary representation.
 
-```OptimalM(n uint64, p float64) uint64```
+- ```OptimalM(n uint64, p float64) uint64```
 
 Calculates the optimal size of the bit array (m).
 
-```OptimalK(m uint64, n uint64) uint64```
+- ```OptimalK(m uint64, n uint64) uint64```
 
 Calculates the optimal number of hash functions (k).
 
