@@ -1,8 +1,12 @@
 # bitbloom
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/umang-sinha/bitbloom.svg)](https://pkg.go.dev/github.com/umang-sinha/bitbloom)
+
 **bitbloom** is a high-performance, thread-safe Bloom filter implementation in Go.
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/umang-sinha/bitbloom.svg)](https://pkg.go.dev/github.com/umang-sinha/bitbloom)
+A Bloom filter is a probabilistic data structure used to test whether an element is a member of a set.
+False positives are possible, but false negatives are not. This means that it can tell you with certainty
+that an element is not in the set, but it may incorrectly report that an element is present.
 
 ## Features
 
@@ -88,7 +92,7 @@ Checks if an item is possibly present in the Bloom filter.  Returns true if the 
 
 - ```(*BloomFilter) EstimatedFillRatio() float64```
 
-Returns the estimated fill ratio of the Bloom filter.
+Returns the theoretical fill ratio of the Bloom filter.
 
 - ```(*BloomFilter) ActualFillRatio() float64```
 
